@@ -24,7 +24,7 @@ if ($mysql_connection->connect_errno) {
 // tables together.
 $query_result = $mysql_connection->query("SELECT `customerName`,`country`,`lastName`,`firstName`
                                           FROM `customers`,`employees`
-                                          WHERE `salesRepEmployeeNumber` = `employeeNumber` ORDER BY `country` ASC ");
+                                          WHERE `salesRepEmployeeNumber` = `employeeNumber` ORDER BY `country`,`customerName` ASC ");
 // Make sure there wasn't an error with the query.
 if ($query_result !== false) {
     while($row_array = $query_result->fetch_assoc()) {
